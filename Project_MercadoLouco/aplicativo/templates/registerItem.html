@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+  Página de Registro de Produto
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-header bg-dark text-white">
+            <h1>Registre aqui o seu produto!</h1>
+          </div>
+            <form method="POST" class="form-register-item" action="/registerItem">
+              {{ form.hidden_tag() }}
+
+              <br>
+                {{ form.name.label() }}
+                {{ form.name(class="form-control", placeholder="Nome do produto") }}
+
+                {{ form.price.label() }}
+                {{ form.price(class="form-control", placeholder="Preço") }}
+
+                {{ form.code.label() }}
+                {{ form.code(class="form-control", placeholder="Código") }}
+
+                {{ form.description.label() }}
+                {{ form.description(class="form-control", placeholder="Descrição") }}
+              
+                <br>
+
+                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}

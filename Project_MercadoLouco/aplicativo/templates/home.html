@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+  Mercado Louco
+{% endblock %}
+
+{% block content %}
+  <div class="position-relative overflow-fidden p-3 p-md-5 n-md-3 text-center bg-dark">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 font-weight-normal">Bem-vindo ao Mercado Louco!</h1>
+      <p class="lead font-weight-normal">Compre agora! Clique no link abaixo!</p>
+      <a class="btn btn-primary" href="{{ url_for('dash_page') }}">Comprar</a>
+    </div>
+    <div class="product-device box-shadow d-none d-nd-block"></div>
+    <p>Tecnologias utilizadas no projeto:</p>
+    <div class="product-device product-device-2 box-shadow d-none d-nd-block"></div>
+    <div class="clearfix">
+        <img id="bootstrap" alt="Logo do bootstrap" class="rounded-circle" style="max-width: 90px;" src="../static/img/bootstrap.jpg"/>
+        <img id="python" alt="Logo do python" class="rounded-circle" style="max-width: 82px;" src="../static/img/python.jpg"/>
+        <img id="flask" alt="Logo do flask" class="rounded-circle" style="max-width: 90px;" src="../static/img/flask.png"/>
+        <img id="sql" alt="Logo do sqlalchemy" class="rounded-circle" style="max-width: 90px;" src="../static/img/sql.png"/>
+        <img id="html" alt="Logo do html5" class="rounded-circle" style="max-width: 90px;" src="../static/img/html.png"/>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,63 @@
+<style>
+    .modal-content{
+        background-color: #212121;
+    }
+</style>
+<!-- Criação de Modal para visualizar informações dos itens -->
+<div class="modal fade" id="Modal-MoreInfo-{{ item.id }}" tabindex="01" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">
+                    {{ item.name }}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{ item.description }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para compra de itens -->
+
+<div class="modal fade" id="Modal-Purchase-{{ item.id }}" tabindex="01" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">
+                    {{ item.name }}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST">
+                    {{ purchase_Form.hidden_tag() }}
+                    <h4 class="text-center">
+                    Tem certeza que deseja comprar {{ item.name }} por {{ item.price }} reais?
+                    </h4>
+                    <br>
+                    <h6 class="text-center">
+                    Clicando em comprar você irá finalizar a compra.
+                    </h6>
+                    <br>
+                    <h6>
+                    <input id="purchased_item" name="purchased_item" type="hidden" value="{{ item.name }}">
+                    {{ purchase_Form.submit(class="btn btn-outline-success btn-block") }}
+                    </h6>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

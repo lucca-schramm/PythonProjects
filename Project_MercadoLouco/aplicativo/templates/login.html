@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+  Página de Login
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-header bg-dark text-white">
+            <h1>Faça o login na sua conta!</h1>
+          </div>
+              <div class="container">
+                <form method="POST" class="form-sigin">
+                  {{ form.hidden_tag() }}
+
+                  <br>
+                  {{ form.username.label() }}
+                  {{ form.username(class="form-control", placeholder="Usuário") }}
+
+                  {{ form.password.label() }}
+                  {{ form.password(class="form-control", placeholder="Senha") }}
+                  <br>
+                  <div class="checkbox mb-3">
+                    <h6>Ainda não tem uma conta?</h6>
+                    <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Registrar</a>
+                  </div>
+                  {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+                </form>
+                
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}
